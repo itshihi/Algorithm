@@ -1,0 +1,14 @@
+-- 문자열 합치기 
+-- 조회수가 가장 높은 게시물의 첨부파일 경로 조회
+-- 
+
+
+SELECT  '/home/grep/src/' || F.BOARD_ID || '/' || F.FILE_ID || F.FILE_NAME || F.FILE_EXT AS FILT_PATH
+FROM USED_GOODS_FILE F
+WHERE F.BOARD_ID IN (
+    SELECT BOARD_ID
+    FROM USED_GOODS_BOARD 
+    ORDER BY VIEWS DESC
+    FETCH FIRST 1 ROW ONLY
+)
+ORDER BY F.FILE_ID DESC;
