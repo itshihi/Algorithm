@@ -2,7 +2,6 @@
 #include <vector>
 #include<cstring>
 #include<climits>
-
 using namespace std;
 
 int map[13][13];
@@ -102,9 +101,10 @@ void solution() {
 
 
 int main() {
-    
-    cin.tie(NULL);
-    ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
+
+
 	int T;
 	cin >> T;
 
